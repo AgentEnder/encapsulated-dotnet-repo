@@ -1,0 +1,18 @@
+{
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "nx/tasks-runners/default",
+            "options": {
+                "cacheableOperations": ["build", "api", "services"]
+            }
+        }
+    },
+    "plugins": ["@nx-dotnet/core"],
+    "installation": {
+        "version": "15.8.0-beta.0",
+        "plugins": {
+            "@nx-dotnet/core": "1.19.1",
+            "@nrwl/devkit": "15.8.0-beta.0"
+        }
+    }
+}
