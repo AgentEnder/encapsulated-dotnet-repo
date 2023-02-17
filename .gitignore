@@ -455,3 +455,5 @@ $RECYCLE.BIN/
 
 .nx/installation
 .nx/cache
+
+dist

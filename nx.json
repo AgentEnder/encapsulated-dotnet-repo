@@ -8,6 +8,11 @@
         }
     },
     "plugins": ["@nx-dotnet/core"],
+    "targetDefaults": {
+        "build": {
+            "dependsOn": ["^build"]
+        }
+    },
     "installation": {
         "version": "15.8.0-beta.0",
         "plugins": {
