@@ -1,0 +1,5 @@
+# Ignore these for the repo statistics
+/.nx linguist-vendored
+/nx.bat linguist-vendored
+/nx linguist-vendored
+/benchmark/** linguist-vendored
