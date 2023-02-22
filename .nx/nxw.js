@@ -13,13 +13,14 @@ const cp = require('child_process');
 const installationPath = path.join(__dirname, 'installation', 'package.json');
 function matchesCurrentNxInstall(nxJsonInstallation) {
     try {
-        const currentInstallation = JSON.parse(fs.readFileSync(installationPath, 'utf-8'));
-        if (currentInstallation.dependencies['nx'] !== nxJsonInstallation.version ||
-            JSON.parse(fs.readFileSync(path.join(installationPath, 'node_modules', 'nx', 'package.json'), 'utf-8')).version !== nxJsonInstallation.version) {
+        const currentInstallation = require(installationPath);
+        if (currentInstallation.devDependencies['nx'] !==
+            nxJsonInstallation.version ||
+            require(path.join(path.dirname(installationPath), 'node_modules', 'nx', 'package.json')).version !== nxJsonInstallation.version) {
             return false;
         }
         for (const [plugin, desiredVersion] of Object.entries(nxJsonInstallation.plugins || {})) {
-            if (currentInstallation.dependencies[plugin] !== desiredVersion) {
+            if (currentInstallation.devDependencies[plugin] !== desiredVersion) {
                 return false;
             }
         }
@@ -38,7 +39,7 @@ function ensureUpToDateInstallation() {
     const nxJsonPath = path.join(__dirname, '..', 'nx.json');
     let nxJson;
     try {
-        nxJson = JSON.parse(fs.readFileSync(nxJsonPath, 'utf-8'));
+        nxJson = require(nxJsonPath);
     }
     catch (_a) {
         console.error('[NX]: nx.json is required when running in encapsulated mode. Run `npx nx init --encapsulated` to restore it.');
@@ -67,4 +68,3 @@ if (require.main === module) {
     ensureUpToDateInstallation();
     require('./installation/node_modules/nx/bin/nx');
 }
-//# sourceMappingURL=nxw.js.map
