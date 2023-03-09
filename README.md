@@ -1,10 +1,6 @@
-# Encapsulated Nx w/ .NET and C#
+# Nx w/ .NET and C# under `.nx`
 
-Hello! This repo is a demo of encapsulated Nx, a new feature in v15.8. For more information on the feature, see: https://nx.dev/more-concepts/encapsulated-nx-and-the-wrapper
-
-## How's it work?
-
-"Encapsulated Nx" is a way of installing Nx without using node or npm directly. Under the hood, Nx looks at the installation property in `nx.json` and synchronizes .nx/installation based off of the versions provided. The driving mechanism is still npm and node, but you don't have to directly interact with it.
+Hello! This repo is a demo of Nx, installed under the `.nx` directory. For more information on the feature, see: https://nx.dev/more-concepts/nx-and-the-wrapper
 
 ## Running Commands
 
@@ -34,7 +30,3 @@ Sample results are included below, but I'd encourage running the benchmark on yo
 | .NET Time (API)      | 89773.4468           | 1m 29.773s           |
 | Nx Time (ALL)        | 19773.0107           | 19.773s              |
 | .NET Time (ALL)      | 86934.3048           | 1m 26.934s           |
-
-## Caveats
-
-Until Nx 15.8.0, Encapsulated Nx is in beta. The above benchmark numbers have patched `matchesCurrentNxInstall` in `.nx/nxw.js` to be `return true`. There is a bug in 15.8.0-beta.0 which causes installation to run each time, which leads to inaccurate benchmark results. This caveat will be removed after Nx has been updated for this.

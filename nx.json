@@ -1,23 +1,34 @@
 {
-    "tasksRunnerOptions": {
-        "default": {
-            "runner": "nx/tasks-runners/default",
-            "options": {
-                "cacheableOperations": ["build", "api", "services"]
-            }
-        }
-    },
-    "plugins": ["@nx-dotnet/core"],
-    "targetDefaults": {
-        "build": {
-            "dependsOn": ["^build"]
-        }
-    },
-    "installation": {
-        "version": "15.8.0-beta.0",
-        "plugins": {
-            "@nx-dotnet/core": "1.19.1",
-            "@nrwl/devkit": "15.8.0-beta.0"
-        }
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "api",
+          "services"
+        ],
+        "accessToken": "Nzc2YWU5YjAtYTQ3OS00YTBiLWFjOTEtOTM2MWRmM2Q3OWZlfHJlYWQtd3JpdGU="
+      }
     }
+  },
+  "plugins": [
+    "@nx-dotnet/core"
+  ],
+  "targetDefaults": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    }
+  },
+  "installation": {
+    "version": "15.8.1",
+    "plugins": {
+      "@nx-dotnet/core": "1.20.0-beta.3",
+      "@nrwl/nx-cloud": "latest",
+      "migrate-child-package": "9.0.0"
+    }
+  }
 }
+
