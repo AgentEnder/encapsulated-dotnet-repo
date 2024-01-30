@@ -6,6 +6,7 @@
         "cacheableOperations": [
           "build",
           "api",
+          "lint",
           "services"
         ],
         "accessToken": "Nzc2YWU5YjAtYTQ3OS00YTBiLWFjOTEtOTM2MWRmM2Q3OWZlfHJlYWQtd3JpdGU="
@@ -31,4 +32,3 @@
     }
   }
 }
-
