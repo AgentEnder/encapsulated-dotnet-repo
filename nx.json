@@ -23,7 +23,7 @@
     }
   },
   "installation": {
-    "version": "16.0.0",
+    "version": "17.3.0",
     "plugins": {
       "@nx-dotnet/core": "1.20.0-beta.3",
       "@nrwl/nx-cloud": "latest"
