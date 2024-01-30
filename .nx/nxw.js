@@ -60,7 +60,7 @@ function ensureUpToDateInstallation() {
     }
     catch (e) {
         console.error('[NX]: Nx wrapper failed to synchronize installation.');
-        console.error(e.stack());
+        console.error(e.stack);
         process.exit(1);
     }
 }
