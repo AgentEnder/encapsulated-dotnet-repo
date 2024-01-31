@@ -26,5 +26,9 @@ jobs:
 
       # Uncomment to enable task distribution. --stop-agents-after is optional, but allows idle agents to shut down once the "build" targets have been requested
       - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="build"
+      - run: |
+          echo $GITHUB_REF;
+          echo $GITHUB_HEAD_REF;
+          echo $GITHUB_REF_NAME;
 
       - run: ./nx affected -t=lint,test,build
